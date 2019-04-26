@@ -4,16 +4,11 @@ public class Admin {
 
     String adminId;
     String admindName;
-    int adminRuc;
+    String adminRuc;
     String adminEmail;
     String adminPass;
 
-    public Admin(String id, String name, String ruc, String email, String password)
-    {
-
-    }
-
-    public Admin(String adminId, String admindName, int adminRuc, String adminEmail, String adminPass) {
+    public Admin(String adminId, String admindName, String adminRuc, String adminEmail, String adminPass) {
         this.adminId = adminId;
         this.admindName = admindName;
         this.adminRuc = adminRuc;
@@ -29,7 +24,7 @@ public class Admin {
         return admindName;
     }
 
-    public int getAdminRuc() {
+    public String getAdminRuc() {
         return adminRuc;
     }
 

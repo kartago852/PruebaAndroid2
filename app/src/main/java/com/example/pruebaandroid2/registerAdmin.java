@@ -36,7 +36,7 @@ public class registerAdmin extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_admin);
-        databaseAdmin = FirebaseDatabase.getInstance().getReference("admins");
+        databaseAdmin = FirebaseDatabase.getInstance().getReference("Admin");
 
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseApp.initializeApp(this);
@@ -70,9 +70,6 @@ public class registerAdmin extends AppCompatActivity implements View.OnClickList
             return;
         }
         if(!TextUtils.isEmpty(name)){
-            String id = databaseAdmin.push().getKey();
-            Admin admin = new Admin(id,name,ruc,email,password);
-            databaseAdmin.child(id).setValue(admin);
         }else{
             Toast.makeText(this,"Falta ingresar el nombre",Toast.LENGTH_LONG).show();
             return;
@@ -80,7 +77,7 @@ public class registerAdmin extends AppCompatActivity implements View.OnClickList
         if(!TextUtils.isEmpty(ruc)){
             String id = databaseAdmin.push().getKey();
             Admin admin = new Admin(id, name , ruc , email, password);
-            databaseAdmin.child(id).setValue(admin);
+            databaseAdmin.child("Administradores").child(id).setValue(admin);
         }else{
             Toast.makeText(this,"Falta ingresar el numero de R.U.C",Toast.LENGTH_LONG).show();
             return;
