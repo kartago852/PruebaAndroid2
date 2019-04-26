@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PruebaAndroid2</string>
+    <string name="email">Ingrese Email</string>
+    <string name="pass">Ingrese Pass</string>
+</resources>
