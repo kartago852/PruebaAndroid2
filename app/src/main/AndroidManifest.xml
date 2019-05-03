@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".registerAdmin"></activity>
+        <activity android:name=".home"></activity>
+        <activity android:name=".registerAdmin" />
         <activity android:name=".registerProvider" />
         <activity android:name=".register" />
         <activity android:name=".MainActivity" />

@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void logearUsuario(){
 
         //Obtenemos el email y la contraseña desde las cajas de texto
-        String email = TextEmail.getText().toString().trim();
+        final String email = TextEmail.getText().toString().trim();
         String password  = TextPassword.getText().toString().trim();
 
         //Verificamos que las cajas de texto no esten vacías
@@ -73,11 +73,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //checking if success
                         if(task.isSuccessful()){
+                            int pos = email.indexOf("@");
+                            String user = email.substring(0, pos);
                             Toast.makeText(MainActivity.this,"Bienvenido "+ TextEmail.getText(),Toast.LENGTH_LONG).show();
-                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            Intent intencion=  new Intent(getApplication(), home.class);
+                            intencion.putExtra(home.user, user);
+                            startActivity(intencion);
                         }else{
 
-                            Toast.makeText(MainActivity.this,"No se pudo registrar el usuario ",Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this,"Datos incorrectos ",Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();
                     }
