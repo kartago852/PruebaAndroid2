@@ -9,8 +9,10 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,14 +27,18 @@ public class home extends AppCompatActivity {
     public static final String user = "names";
     TextView txtUser;
 
+
+    private GridLayout mlayout;
+    Button addcri;
     EditText txtCriteriosE;
     EditText txtNomCrite;
     ListView ListMatriz;
-    Button NewBtn;
-    LinearLayout Grilla;
-    EditText NewCasillaCriterios;
-    Spinner ImpoCri;
-    EditText txtCriteriosP;
+
+    DynamicViews  dnv;
+    RelativeLayout containerLayout;
+    static int totalEditTexts = 0;
+    Button button;
+    Context context;
 
 
     @Override
@@ -43,16 +49,21 @@ public class home extends AppCompatActivity {
         txtUser = (TextView)findViewById(R.id.txt_User);
         String user = getIntent().getStringExtra("names");
         txtUser.setText("!Bienvenido " + user + "!");
+        mlayout = (GridLayout)findViewById(R.id.mylayout);
+        addcri = (Button)findViewById(R.id.AgregarCri);
 
-        txtCriteriosE = (EditText)findViewById(R.id.txt_criterios);
 
 
-
-        Button btn_addcriterio = (Button)findViewById(R.id.btn_addCriterio);
+        Button btn_addcriterio = (Button)findViewById(R.id.AgregarCri);
         btn_addcriterio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addButton();
+                dnv = new DynamicViews(context);
+
+                mlayout.addView(dnv.IngresarCri(getApplicationContext()),4);
+                mlayout.addView(dnv.ImportanciaCri(getApplicationContext()),5);
+
+
             }
         });
     }
@@ -84,21 +95,13 @@ public class home extends AppCompatActivity {
     }
 
     public void addButton(){
-        LinearLayout newGrilla = (LinearLayout)findViewById(R.id.panel_layout);
 
-        txtCriteriosP = (EditText)findViewById(R.id.txt_Cri);
-        newGrilla.addView(txtCriteriosP);
+
+
 
 
 
     }
-
-
-    public void Onclick(View view)
-    {
-        numeroCri();
-    }
-
 
 
 }
