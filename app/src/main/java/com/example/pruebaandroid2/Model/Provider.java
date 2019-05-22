@@ -1,4 +1,4 @@
-package com.example.pruebaandroid2;
+package com.example.pruebaandroid2.Model;
 
 public class Provider {
 

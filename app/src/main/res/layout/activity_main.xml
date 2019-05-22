@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#546e7a"
-    tools:context=".MainActivity">
+    tools:context=".Views.MainActivity">
 
     <EditText
         android:id="@+id/txt_email"
@@ -17,7 +17,7 @@
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
         android:ems="10"
         android:hint="@string/pass"
         android:inputType="textPassword"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,24 +68,27 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="153dp"
-        android:layout_height="38dp"
+        android:layout_width="96dp"
+        android:layout_height="41dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
         android:text="¿Eres Nuevo?,"
-        android:textSize="24sp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/txt_regis"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_register" />
 
     <TextView
         android:id="@+id/txt_regis"
-        android:layout_width="115dp"
-        android:layout_height="35dp"
+        android:layout_width="89dp"
+        android:layout_height="24dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="124dp"
         android:onClick="onClick"
         android:text="Registrate"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_register" />
 </android.support.constraint.ConstraintLayout>

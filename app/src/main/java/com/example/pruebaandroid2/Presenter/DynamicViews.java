@@ -1,4 +1,4 @@
-package com.example.pruebaandroid2;
+package com.example.pruebaandroid2.Presenter;
 
 import android.content.Context;
 import android.view.ViewGroup;
@@ -39,13 +39,7 @@ public class DynamicViews {
         return spinner;
     }
 
-    public Button btnAgregarCri(Context context)
-    {
-        final ViewGroup.LayoutParams lparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        final Button btn = new Button(context);
 
-        return btn;
-    }
 
 
 }

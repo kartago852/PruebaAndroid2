@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#546e7a"
     android:onClick="VolverP"
-    tools:context=".registerProvider">
+    tools:context=".Views.registerProvider">
 
     <TextView
         android:id="@+id/textView3"

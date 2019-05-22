@@ -1,6 +1,5 @@
-package com.example.pruebaandroid2;
+package com.example.pruebaandroid2.Views;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Handler;
@@ -8,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.example.pruebaandroid2.R;
 
 public class splashscreen extends AppCompatActivity {
     private static int timeout=3000;
@@ -27,7 +26,7 @@ public class splashscreen extends AppCompatActivity {
         handler.postDelayed(new Runnable(){
         @Override
         public void run(){
-            Intent intent = new Intent(splashscreen.this,MainActivity.class);
+            Intent intent = new Intent(splashscreen.this, MainActivity.class);
             startActivity(intent);
             finish();
             }

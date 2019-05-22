@@ -11,13 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".home"></activity>
-        <activity android:name=".registerAdmin" />
-        <activity android:name=".registerProvider" />
-        <activity android:name=".register" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Views.home"></activity>
+        <activity android:name=".Views.registerAdmin" />
+        <activity android:name=".Views.registerProvider" />
+        <activity android:name=".Views.register" />
+        <activity android:name=".Views.MainActivity" />
         <activity
-            android:name=".splashscreen"
+            android:name=".Views.splashscreen"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
