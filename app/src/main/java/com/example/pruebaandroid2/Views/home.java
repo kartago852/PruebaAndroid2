@@ -25,10 +25,6 @@ public class home extends AppCompatActivity {
 
     private GridLayout mlayout;
     Button addcri;
-    EditText txtCriteriosE;
-    EditText txtNomCrite;
-    ListView ListMatriz;
-
     DynamicViews dnv;
     RelativeLayout containerLayout;
     static int totalEditTexts = 0;
@@ -54,7 +50,7 @@ public class home extends AppCompatActivity {
 
                 mlayout.addView(dnv.IngresarCri(getApplicationContext()));
                 mlayout.addView(dnv.ImportanciaCri(getApplicationContext()));
-
+                mlayout.addView(dnv.ValidarCri(getApplicationContext()));
 
             }
         });

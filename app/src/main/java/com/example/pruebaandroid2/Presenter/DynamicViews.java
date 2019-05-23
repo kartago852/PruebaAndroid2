@@ -39,7 +39,13 @@ public class DynamicViews {
         return spinner;
     }
 
-
+    public Button ValidarCri(Context context)
+    {
+        final ViewGroup.LayoutParams lparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        final Button button = new Button(context);
+        button.setText("Valide Criterio");
+        return button;
+    }
 
 
 }
