@@ -1,6 +1,7 @@
 package com.example.pruebaandroid2.Views;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,7 @@ public class home extends AppCompatActivity {
 
     public static final String user = "names";
     TextView txtUser;
-
+    private Button btnalternativas;
 
     private GridLayout mlayout;
     Button addcri;
@@ -37,11 +38,24 @@ public class home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        btnalternativas = (Button)findViewById(R.id.IrAlternativa);
+        btnalternativas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intencion=  new Intent(getApplication(), vistaAlternativas.class);
+                intencion.putExtra(vistaAlternativas.user, user);
+                startActivity(intencion);
+            }
+        });
+
+
         txtUser = (TextView)findViewById(R.id.txt_User);
         String user = getIntent().getStringExtra("names");
         txtUser.setText("!Bienvenido " + user + "!");
         mlayout = (GridLayout)findViewById(R.id.mylayout);
         addcri = (Button)findViewById(R.id.AgregarCri);
+
+
 
         addcri.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +68,8 @@ public class home extends AppCompatActivity {
 
             }
         });
+
+
     }
 
 }
