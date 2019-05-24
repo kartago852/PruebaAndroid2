@@ -29,7 +29,7 @@
         android:text="Agregar Criteros" />
 
     <GridLayout
-        android:id="@+id/mylayout"
+        android:id="@+id/mylayoutAlt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="3"

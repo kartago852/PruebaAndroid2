@@ -1,6 +1,7 @@
 package com.example.pruebaandroid2.Presenter;
 
 import android.content.Context;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -44,6 +45,12 @@ public class DynamicViews {
         final ViewGroup.LayoutParams lparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
         final Button button = new Button(context);
         button.setText("Valide Criterio");
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button.setEnabled(false);
+            }
+        });
         return button;
     }
 
