@@ -7,6 +7,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.example.pruebaandroid2.Model.Criterio;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class DynamicViews {
 
@@ -27,6 +32,7 @@ public class DynamicViews {
         editText.setId(id);
         editText.setHint("Ingrese Criterio");
 
+
         return editText;
     }
 
@@ -40,7 +46,7 @@ public class DynamicViews {
         return spinner;
     }
 
-    public Button ValidarCri(Context context)
+    public Button ValidarCri(final Context context)
     {
         final ViewGroup.LayoutParams lparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
         final Button button = new Button(context);
@@ -48,11 +54,17 @@ public class DynamicViews {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Criterio c = new Criterio();
+
+
+                Toast.makeText(context,"Registrado en la Base de datos",Toast.LENGTH_SHORT).show();
                 button.setEnabled(false);
             }
         });
         return button;
     }
+
+
 
 
 }

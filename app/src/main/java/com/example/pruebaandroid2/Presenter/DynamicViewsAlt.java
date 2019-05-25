@@ -7,6 +7,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+
 
 public class DynamicViewsAlt {
 
@@ -37,7 +40,7 @@ public class DynamicViewsAlt {
         return spinner;
     }
 
-    public Button ValidarAlt(Context context)
+    public Button ValidarAlt(final Context context)
     {
         final ViewGroup.LayoutParams lparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
         final Button button = new Button(context);
@@ -45,7 +48,9 @@ public class DynamicViewsAlt {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(context,"Registrado en la Base de datos",Toast.LENGTH_SHORT).show();
                 button.setEnabled(false);
+
             }
         });
         return button;

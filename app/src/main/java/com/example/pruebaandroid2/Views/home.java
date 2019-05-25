@@ -15,8 +15,11 @@ import android.widget.TextView;
 
 import com.example.pruebaandroid2.Presenter.DynamicViews;
 import com.example.pruebaandroid2.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class home extends AppCompatActivity {
+
 
     private LinearLayout parentLinearLayout;
 
@@ -48,14 +51,11 @@ public class home extends AppCompatActivity {
             }
         });
 
-
         txtUser = (TextView)findViewById(R.id.txt_User);
         String user = getIntent().getStringExtra("names");
         txtUser.setText("!Bienvenido " + user + "!");
         mlayout = (GridLayout)findViewById(R.id.mylayout);
         addcri = (Button)findViewById(R.id.AgregarCri);
-
-
 
         addcri.setOnClickListener(new View.OnClickListener() {
             @Override
