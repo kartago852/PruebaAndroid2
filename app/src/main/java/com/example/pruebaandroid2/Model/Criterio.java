@@ -10,7 +10,6 @@ public class Criterio {
 
      }
 
-
     public String getIdCriterio() {
         return IdCriterio;
     }

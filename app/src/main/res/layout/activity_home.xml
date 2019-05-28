@@ -10,11 +10,10 @@
 
     <Button
         android:id="@+id/IrAlternativa"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
+        android:layout_width="194dp"
+        android:layout_height="36dp"
         android:layout_gravity="right"
-        android:text="Ir a Alternativas"
-        />
+        android:text="Ir a Alternativas" />
 
     <TextView
         android:id="@+id/txt_User"
@@ -44,15 +43,14 @@
         android:padding="10dp">
 
         <TextView
-            android:padding="20dp"
-            android:text="Criterios"
             android:layout_row="1"
-            android:layout_column="0" />
+            android:layout_column="0"
+            android:padding="20dp"
+            android:text="Criterios" />
 
         <TextView
             android:padding="20dp"
-            android:text="Importancia"
-            />
+            android:text="Importancia" />
 
         <TextView
             android:padding="20dp"

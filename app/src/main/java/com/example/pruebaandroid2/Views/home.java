@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pruebaandroid2.Presenter.DynamicViews;
 import com.example.pruebaandroid2.R;
@@ -26,13 +27,14 @@ public class home extends AppCompatActivity {
     public static final String user = "names";
     TextView txtUser;
     private Button btnalternativas;
+    int con=3;
 
     private GridLayout mlayout;
     Button addcri;
+    Button addbuton;
     DynamicViews dnv;
     RelativeLayout containerLayout;
-    static int totalEditTexts = 0;
-    Button button;
+
     Context context;
 
 
@@ -60,16 +62,25 @@ public class home extends AppCompatActivity {
         addcri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dnv = new DynamicViews(context);
 
+                dnv = new DynamicViews(context);
                 mlayout.addView(dnv.IngresarCri(getApplicationContext()));
                 mlayout.addView(dnv.ImportanciaCri(getApplicationContext()));
                 mlayout.addView(dnv.ValidarCri(getApplicationContext()));
+
+                //Toast.makeText(getApplicationContext(),"HOLAAA " + ++con,Toast.LENGTH_LONG).show();
 
             }
         });
 
 
+    }
+
+    public void addbuton()
+    {
+        addbuton = new Button(this);
+        addbuton.setText("Hola" + ++con);
+        mlayout.addView(addbuton);
     }
 
 }

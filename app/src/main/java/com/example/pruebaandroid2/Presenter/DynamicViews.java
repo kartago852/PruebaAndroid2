@@ -10,6 +10,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.pruebaandroid2.Model.Criterio;
+import com.example.pruebaandroid2.R;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -26,17 +27,15 @@ public class DynamicViews {
     public DynamicViews(Context ctx) {
         this.ctx = ctx;
 
-
-
     }
 
     public EditText IngresarCri(Context context) {
         final ViewGroup.LayoutParams lparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
         final EditText editText = new EditText(context);
         int id = 0;
+
         editText.setId(id);
         editText.setHint("Ingrese Criterio");
-        String nombreCri = editText.getText().toString();
         return editText;
     }
 
@@ -50,26 +49,33 @@ public class DynamicViews {
         return spinner;
     }
 
-    public Button ValidarCri(final Context context)
-    {
+    public Button ValidarCri(final Context context) {
 
-        final ViewGroup.LayoutParams lparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        final Button button = new Button(context);
-        InicializarFire();
-        button.setText("Valide Criterio");
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Criterio c = new Criterio();
 
-                c.setNombreCri("HOLA");
-                databaseReference.child("Criterio").child(c.getNombreCri()).setValue(c);
-                Toast.makeText(context,"Registrado en la Base de datos",Toast.LENGTH_SHORT).show();
-                button.setEnabled(false);
-            }
-        });
-        return button;
+            InicializarFire();
+            final ViewGroup.LayoutParams lparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
+             Button button = new Button(context);
+            int cm = 0;
+            button.setText("Valide Criterio" + ++cm);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Criterio c = new Criterio();
+                    int con = 0;
+
+                    c.setNombreCri("HOla" + (++con));
+                    databaseReference.child("Criterio" + ++con).child(c.getNombreCri()).setValue(c);
+
+                    Toast.makeText(context, "Se creo el Criterio " + ++con, Toast.LENGTH_SHORT).show();
+
+                }
+
+            });
+
+            return button;
+
     }
+
 
     public void InicializarFire()
     {
