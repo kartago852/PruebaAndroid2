@@ -22,7 +22,9 @@ public class DynamicViews {
     DatabaseReference databaseReference;
     Context ctx;
 
-
+    //siempre declarar los contadores globalmente
+    int cm = 0;
+    int con = 0;
 
     public DynamicViews(Context ctx) {
         this.ctx = ctx;
@@ -55,13 +57,19 @@ public class DynamicViews {
             InicializarFire();
             final ViewGroup.LayoutParams lparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
              Button button = new Button(context);
-            int cm = 0;
-            button.setText("Valide Criterio" + ++cm);
+             
+        /*Anteriormente acá creaste tu contador, si lo haces acá tu contador no va servir.
+        * Debe ser declarado globalmente.*/
+
+        //todo: quita la siguiente linea de comentario
+
+            //button.setText("Valide Criterio" + ++cm);
+            button.setText("c/" + ++cm);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Criterio c = new Criterio();
-                    int con = 0;
+
 
                     c.setNombreCri("HOla" + (++con));
                     databaseReference.child("Criterio" + ++con).child(c.getNombreCri()).setValue(c);
