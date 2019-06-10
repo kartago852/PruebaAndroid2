@@ -22,6 +22,9 @@ public class DynamicViews {
     DatabaseReference databaseReference;
     Context ctx;
 
+    int cm =0;
+    int con = 0;
+
 
 
     public DynamicViews(Context ctx) {
@@ -33,7 +36,6 @@ public class DynamicViews {
         final ViewGroup.LayoutParams lparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
         final EditText editText = new EditText(context);
         int id = 0;
-
         editText.setId(id);
         editText.setHint("Ingrese Criterio");
         return editText;
@@ -51,29 +53,29 @@ public class DynamicViews {
 
     public Button ValidarCri(final Context context) {
 
-
             InicializarFire();
             final ViewGroup.LayoutParams lparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
-             Button button = new Button(context);
-            int cm = 0;
-            button.setText("Valide Criterio" + ++cm);
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Criterio c = new Criterio();
-                    int con = 0;
+            Button button = new Button(context);
+                button.setText("Criterio N°" + ++cm);
+                button.setContentDescription("Identificattivo");
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Criterio c = new Criterio();
 
-                    c.setNombreCri("HOla" + (++con));
-                    databaseReference.child("Criterio" + ++con).child(c.getNombreCri()).setValue(c);
+                        c.setNombreCri("HOla");
 
-                    Toast.makeText(context, "Se creo el Criterio " + ++con, Toast.LENGTH_SHORT).show();
+                        databaseReference.child("Criterio" + con).child(c.getNombreCri()).setValue(c);
+                        Toast.makeText(context, "Se creo el Criterio " + ++con, Toast.LENGTH_SHORT).show();
 
-                }
 
-            });
+                    }
+
+                });
+
+            Toast.makeText(context,"HOLA" + cm,Toast.LENGTH_SHORT).show();
 
             return button;
-
     }
 
 

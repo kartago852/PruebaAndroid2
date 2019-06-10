@@ -7,4 +7,5 @@
         <item>Cable</item>
         <item>Telefono</item>
     </array>
+    <string name="title_activity_dashboard">dashboard</string>
 </resources>

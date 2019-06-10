@@ -36,12 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         firebaseAuth = FirebaseAuth.getInstance();
-
         TextEmail = (EditText) findViewById(R.id.txt_email);
         TextPassword = (EditText) findViewById(R.id.txt_pass);
-
         btnRegistrar = (Button) findViewById(R.id.btn_register);
-
         progressDialog = new ProgressDialog(this);
 
         btnRegistrar.setOnClickListener(this);
@@ -63,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this,"Falta ingresar la contraseña",Toast.LENGTH_LONG).show();
             return;
         }
+        // Sigue el flujo de validacion
         progressDialog.setMessage("Verificando en la base de datos...");
         progressDialog.show();
 

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Views.vistaAlternativas"></activity>
+        <activity android:name=".Views.dashboard"></activity>
+        <activity android:name=".Views.vistaAlternativas" />
         <activity android:name=".Views.home" />
         <activity android:name=".Views.registerAdmin" />
         <activity android:name=".Views.registerProvider" />
