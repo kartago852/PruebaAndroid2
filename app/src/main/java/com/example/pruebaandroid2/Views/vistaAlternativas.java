@@ -32,19 +32,36 @@ public class vistaAlternativas extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     Button addAlt;
+    Button btn_Dash;
     GridLayout mlayoutAlt;
     Button addbuton;
     EditText ingrealt;
     Spinner valoralt;
+    Criterio c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vista_alternativas);
-
+        Intent recibir = getIntent();
         txtUser = (TextView)findViewById(R.id.txt_User);
-        String user = getIntent().getStringExtra("names");
+        String user = recibir.getStringExtra("names");
         txtUser.setText("!Bienvenido " + user + "!");
+        Bundle datos = this.getIntent().getExtras();
+        String Crinom = datos.getString("Criterios_Nombre");
+        String Crival = datos.getString("Criterios_Valor");
+
+
+        btn_Dash = (Button)findViewById(R.id.btn_Dash);
+        btn_Dash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent irDash = new Intent(getApplicationContext(),dashboard.class);
+                irDash.putExtra("Alternativa_Nombre",ingrealt.getText().toString());
+                irDash.putExtra("Alternativa_Valor",valoralt.getSelectedItem().toString());
+                startActivity(irDash);
+            }
+        });
 
         mlayoutAlt = (GridLayout)findViewById(R.id.mylayoutAlt);
         addAlt = (Button)findViewById(R.id.AgregarAlt);

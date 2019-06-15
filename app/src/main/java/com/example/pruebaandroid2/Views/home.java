@@ -49,6 +49,8 @@ public class home extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intencion=  new Intent(getApplication(), vistaAlternativas.class);
                 intencion.putExtra(vistaAlternativas.user, user);
+                intencion.putExtra("Criterios_Nombre", ingrecri.getText().toString());
+                intencion.putExtra("Criterios_Valor",valorcri.getSelectedItem().toString());
                 startActivity(intencion);
             }
         });

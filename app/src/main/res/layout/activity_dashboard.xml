@@ -8,4 +8,39 @@
     android:orientation="vertical"
     tools:context=".Views.dashboard">
 
+
+    <TextView
+        android:id="@+id/Resultado"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:text="Resultados"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/btn_mostrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mostrar RESULTADOS"
+        />
+    <GridLayout
+        android:id="@+id/grid_resultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_row="1"
+            android:layout_column="0"
+            android:text="Mostrar Criterios"
+            android:padding="20dp"
+            />
+        <TextView
+            android:text="Mostrar Alternativas"
+            android:padding="20dp"
+            />
+
+    </GridLayout>
 </LinearLayout>
