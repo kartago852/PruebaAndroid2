@@ -48,8 +48,6 @@ public class vistaAlternativas extends AppCompatActivity {
         String user = recibir.getStringExtra("names");
         txtUser.setText("!Bienvenido " + user + "!");
         Bundle datos = this.getIntent().getExtras();
-        String Crinom = datos.getString("Criterios_Nombre");
-        String Crival = datos.getString("Criterios_Valor");
 
 
         btn_Dash = (Button)findViewById(R.id.btn_Dash);
@@ -57,8 +55,7 @@ public class vistaAlternativas extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent irDash = new Intent(getApplicationContext(),dashboard.class);
-                irDash.putExtra("Alternativa_Nombre",ingrealt.getText().toString());
-                irDash.putExtra("Alternativa_Valor",valoralt.getSelectedItem().toString());
+
                 startActivity(irDash);
             }
         });
@@ -88,14 +85,10 @@ public class vistaAlternativas extends AppCompatActivity {
         ingrealt = new EditText(this);
         valoralt = new Spinner(this);
 
-        String[] listaCri1 = {"1", "3", "5", "7", "9"};
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listaCri1);
-        valoralt.setAdapter(arrayAdapter);
         ingrealt.setHint("Ingrese Alternativa");
         addbuton.setText("Alternativa N°" + ++con);
         mlayoutAlt.addView(addbuton);
         mlayoutAlt.addView(ingrealt);
-        mlayoutAlt.addView(valoralt);
 
         addbuton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,13 +96,14 @@ public class vistaAlternativas extends AppCompatActivity {
                 InicializarFire();
                 String id = databaseReference.push().getKey();
                 String in = ingrealt.getText().toString();
-                String va = valoralt.getSelectedItem().toString();
+
                 Alternativa a = new Alternativa();
                 a.setNombreAlt(in);
-                a.setValorAlt(va);
+
                 databaseReference.child("Alterantiva" + con).child(id).setValue(a);
                 Toast.makeText(getApplicationContext(), "Se creo La alternativa " + con, Toast.LENGTH_SHORT).show();
                 addbuton.setEnabled(false);
+                ingrealt.setEnabled(false);
 
             }
         });

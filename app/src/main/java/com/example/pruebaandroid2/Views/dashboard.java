@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +17,7 @@ public class dashboard extends AppCompatActivity {
     GridLayout mygrid;
     Button addmos;
     TextView mostrar;
-
+    ProgressBar pogrebar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
