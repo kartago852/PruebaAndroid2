@@ -55,7 +55,6 @@ public class vistaAlternativas extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent irDash = new Intent(getApplicationContext(),dashboard.class);
-
                 startActivity(irDash);
             }
         });

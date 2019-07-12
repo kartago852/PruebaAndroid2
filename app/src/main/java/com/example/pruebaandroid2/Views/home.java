@@ -31,6 +31,7 @@ public class home extends AppCompatActivity {
     Button addbuton;
     EditText ingrecri;
     Spinner valorcri;
+    String in;
 
 
     @Override
@@ -43,6 +44,9 @@ public class home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intencion=  new Intent(getApplication(), vistaAlternativas.class);
+                Intent irDash = new Intent(getApplication(),dashboard.class);
+                irDash.putExtra("nomCri","in");
+
                 startActivity(intencion);
             }
         });
